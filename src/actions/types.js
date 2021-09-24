@@ -1,0 +1,1 @@
+export const FETCH_EVENT_LIST = 'FETCH_EVENT_LIST';
