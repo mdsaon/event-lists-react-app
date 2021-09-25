@@ -3,8 +3,6 @@ import React from 'react';
 import EventDetails from './EventDetails';
 
 const EventLists = ({ events, eventDetails }) => {
-  console.log(events);
-  console.log(eventDetails);
   return (
     <div>
       Event details

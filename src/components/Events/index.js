@@ -19,7 +19,7 @@ const Events = ({dispatch, eventLists, eventDetails}) => {
 
 const mapStateToProps = (state) => ({
   eventLists: state.event.events,
-  eventDetails: state.event.eventAttributes,
+  eventDetails: state.event.events.length !==0 && state.event.events.data.map(event=>event.attributes),
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -13,7 +13,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         events: action.payload,
-        eventAttributes: action.payload.data.map(event=>event.attributes)
       };
     default:
       return state;
