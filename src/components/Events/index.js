@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getEvents } from '../../actions/eventActions';
 import EventLists from './EventLists';
+import { Wrapper } from './styles';
 
 const Events = ({dispatch, eventLists, eventDetails}) => {
   useEffect(() => {
@@ -10,9 +11,11 @@ const Events = ({dispatch, eventLists, eventDetails}) => {
   }, []);
   
   return(
-    <div>
-      <EventLists events={eventLists} eventDetails={eventDetails}/>
-    </div>
+    <Wrapper>
+      <EventLists 
+        events={eventLists} 
+        eventDetails={eventDetails}/>
+    </Wrapper>
   )
 }
 

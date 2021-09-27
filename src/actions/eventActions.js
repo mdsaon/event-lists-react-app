@@ -1,7 +1,15 @@
 import {
+  SHOW_ERROR_MESSAGE,
   FETCH_EVENT_LIST,
 } from "./types";
 import axios from "axios";
+
+export const displayErrorMessage = (text) => dispatch => {
+  dispatch({
+    type: SHOW_ERROR_MESSAGE,
+    payload: text,
+  });
+};
 
 export const getEvents = () => dispatch => {
   axios
@@ -10,6 +18,9 @@ export const getEvents = () => dispatch => {
       dispatch({
         type: FETCH_EVENT_LIST,
         payload:res.data,
-      })
-    );
+      }))
+      .catch(e => {
+        console.error(e);
+        dispatch(displayErrorMessage('404 not found'));
+      });
 };

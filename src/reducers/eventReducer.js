@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
+  SHOW_ERROR_MESSAGE,
   FETCH_EVENT_LIST,
 } from "../actions/types";
 
@@ -14,6 +15,11 @@ export default function(state = initialState, action) {
         ...state,
         events: action.payload,
       };
+    case SHOW_ERROR_MESSAGE:
+        return {
+          ...state,
+          errors: action.payload,
+        };
     default:
       return state;
   }
